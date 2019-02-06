@@ -1,0 +1,23 @@
+package com.abhijeetkale.allClasses;
+
+import java.io.File;
+import javax.xml.transform.Result;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+
+public class saveFile
+{
+  public saveFile() {}
+  
+  public static void saveFileMethod(String fileName, Document doc) throws Exception
+  {
+    TransformerFactory tranFactory = TransformerFactory.newInstance();
+    Transformer aTransformer = tranFactory.newTransformer();
+    javax.xml.transform.Source src = new DOMSource(doc);
+    Result dest = new StreamResult(new File(fileName));
+    aTransformer.transform(src, dest);
+  }
+}

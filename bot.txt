@@ -1,0 +1,22 @@
+package com.abhijeetkale.allClasses;
+
+public class Jbot {
+  public Jbot() {}
+  
+  public String newst = "";
+  
+  public static String callReadFileMethod(String fileName) throws Exception {
+    String newst = readFile.readFileMethod(fileName);
+    return newst;
+  }
+  
+  public static void callChangeThreadNumber(String newst, String fileName, int users) throws Exception {
+    changeTestElement.changeThreadNumber(newst, fileName, users);
+  }
+  
+  public static void main(String[] args) throws Exception
+  {
+    String newst = callReadFileMethod("D:\\Softwares\\apache-jmeter-3.0\\bin\\Thread Group_example.jmx");
+    callChangeThreadNumber(newst, "D:\\Softwares\\apache-jmeter-3.0\\bin\\Thread Group_example.jmx", 30);
+  }
+}
