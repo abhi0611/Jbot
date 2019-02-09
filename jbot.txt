@@ -1,0 +1,35 @@
+package com.abhijeetkale.allClasses;
+
+import java.io.PrintStream;
+
+public class Jbot {
+  public String newst = "";
+  
+  public Jbot() {}
+  
+  public static String callReadFileMethod(String fileName) throws Exception {
+    String newst = readFile.readFileMethod(fileName);
+    return newst;
+  }
+  
+  public static void callChangeThreadNumber(String newst, String fileName, int users) throws Exception {
+    changeTestElement.changeThreadNumber(newst, fileName, users);
+  }
+  
+  public static void executeTest(String jmxFile, String jtlFile, String logFile) {
+    String newJmxFile = "\"" + jmxFile + "\"";
+    String newJtlFile = "\"" + jtlFile + "\"";
+    String newLogFile = "\"" + logFile + "\"";
+    
+    String initialCommand = "jmeter -n -t " + newJmxFile + " -l " + newJtlFile + " -j " + newLogFile;
+    String command = "cmd /c start cmd.exe /K \"D: && cd D:\\Softwares\\apache-jmeter-3.0\\bin && " + initialCommand;
+    try
+    {
+      Runtime.getRuntime().exec(command);
+    }
+    catch (Exception e) {
+      System.out.println("Invalid Command");
+      e.printStackTrace();
+    }
+  }
+}

@@ -1,0 +1,21 @@
+package com.abhijeetkale.allClasses;
+
+import java.io.BufferedReader;
+
+public class readFile
+{
+  public readFile() {}
+  
+  public static String readFileMethod(String fileName) throws Exception {
+    java.io.File file = new java.io.File(fileName);
+    BufferedReader br = new BufferedReader(new java.io.FileReader(file));
+    String newst = "";
+    String st;
+    while ((st = br.readLine()) != null) { String st;
+      newst = newst + st;
+    }
+    br.close();
+    System.out.println(newst);
+    return newst;
+  }
+}
